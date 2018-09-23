@@ -3,7 +3,7 @@ from twisted.internet import reactor
 
 class HelloWorldUDP(DatagramProtocol):
     def datagramReceived(self, datagram, address):
-        print('received from ' + str(address))
+        print('received ' + repr(datagram) + 'from ' + str(address))
         self.transport.write(datagram, address)
 
 def main():
